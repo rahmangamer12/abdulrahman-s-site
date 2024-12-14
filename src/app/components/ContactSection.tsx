@@ -1,49 +1,46 @@
 export default function ContactSection() {
   return (
     <section id="contact" className="container mx-auto py-16 px-6">
-      <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
-      <form className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6" action="https://formspree.io/f/xanyzrzk"
-        method="POST">
+      <h2 className="text-3xl font-bold text-center mb-8 text-black">Contact Us</h2>
+      <form
+        className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6"
+        action="https://formspree.io/f/xanyzrzk"
+        method="POST"
+      >
         <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-2">Name</label>
+          <label className="block text-black font-semibold mb-2">Name</label>
           <input
             type="text"
             required
             name="name"
-            className="w-full border rounded-md p-3"
+            className="w-full border rounded-md p-3 text-black"
             placeholder="Your Name"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-2">
-            Email
-          </label>
+          <label className="block text-black font-semibold mb-2">Email</label>
           <input
             type="email"
             required
             name="email"
-            className="w-full border rounded-md p-3"
+            className="w-full border rounded-md p-3 text-black"
             placeholder="Your Email"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-2">
-            Subject
-          </label>
+          <label className="block text-black font-semibold mb-2">Subject</label>
           <input
-            type="subject"
+            type="text"
             required
             name="subject"
-            className="w-full border rounded-md p-3"
+            className="w-full border rounded-md p-3 text-black"
             placeholder="Enter Subject"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-2">
-            Message
-          </label>
+          <label className="block text-black font-semibold mb-2">Message</label>
           <textarea
-            className="w-full border rounded-md p-3"
+            className="w-full border rounded-md p-3 text-black"
             required
             placeholder="Your Message"
             rows={4}
