@@ -23,11 +23,11 @@ export default function BlogSection() {
   ];
 
   return (
-    <section id="blog" className="py-16 px-6 bg-white text-black">
-      <h2 className="text-3xl font-bold text-center mb-8">Latest Blogs</h2>
+    <section id="blog" className="py-16 px-6 bg-gray-900 text-gray-400">
+      <h2 className="text-white text-3xl font-bold text-center mb-8">Latest Blogs</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {blogs.map((blog) => (
-          <div key={blog.slug} className="p-6 shadow-lg rounded-md bg-white">
+          <div key={blog.slug} className="p-6 shadow-lg rounded-md bg-gray-900">
             <Image
               src={blog.image}
               alt={blog.title}
@@ -36,7 +36,7 @@ export default function BlogSection() {
               className="rounded-md mb-4"
             />
             <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
-            <p className="text-gray-600 mb-4">{blog.description}</p>
+            <p className="text-gray-400 mb-4">{blog.description}</p>
           </div>
         ))}
       </div>

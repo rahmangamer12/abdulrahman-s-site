@@ -1,7 +1,7 @@
 export default function ContactSection() {
   return (
     <section id="contact" className="container mx-auto py-16 px-6">
-      <h2 className="text-3xl font-bold text-center mb-8 text-black">Contact Us</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 text-white">Contact Us</h2>
       <form
         className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6"
         action="https://formspree.io/f/xanyzrzk"
