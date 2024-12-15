@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { FiMenu, FiSearch, FiX } from "react-icons/fi"; // Importing close icon (FiX)
+import { FiMenu, FiSearch, FiX } from "react-icons/fi";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +10,11 @@ export default function Navbar() {
   // Toggle menu visibility
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Close the menu on link click
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -27,14 +32,14 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Right-side Hamburger Icon (Mobile) */}
+        {/* Hamburger Icon (Mobile) */}
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
             className="p-2 rounded-full bg-gray-700 hover:bg-gray-600"
             title="Open Menu"
           >
-            <FiMenu size={24} />
+            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
 
@@ -51,18 +56,20 @@ export default function Navbar() {
 
         {/* Links for Large Screens */}
         <div className="hidden md:flex space-x-6">
-          <Link href="/" className="hover:text-gray-300" title="Go to Home Page">Home</Link>
-          <Link href="#about" className="hover:text-gray-300" title="Learn More About Us">About</Link>
-          <Link href="#blog" className="hover:text-gray-300" title="Read Our Blog">Blog</Link>
-          <Link href="#contact" className="hover:text-gray-300" title="Get in Touch with Us">Contact</Link>
+          <Link href="/" className="hover:text-gray-300">Home</Link>
+          <Link href="#about" className="hover:text-gray-300">About</Link>
+          <Link href="#blog" className="hover:text-gray-300">Blog</Link>
+          <Link href="#contact" className="hover:text-gray-300">Contact</Link>
         </div>
       </div>
 
-      {/* Right-side menu that slides in for Mobile */}
+      {/* Slide-in menu for Mobile */}
       {isMenuOpen && (
-        <div className="fixed top-0 right-0 h-full w-3/4 bg-gray-800 text-white p-4 z-50 transform transition-transform ease-in-out">
+        <div
+          className="fixed top-0 right-0 h-full w-3/4 bg-gray-800 text-white p-4 z-50 transition-transform"
+          style={{ overflowY: "auto" }}
+        >
           <div className="flex justify-end">
-            {/* Close Button */}
             <button
               onClick={toggleMenu}
               className="p-2 rounded-full bg-gray-700 hover:bg-gray-600"
@@ -74,16 +81,16 @@ export default function Navbar() {
           <div className="mt-8">
             <ul className="space-y-4">
               <li>
-                <Link href="/" className="hover:text-gray-300" title="Go to Home Page">Home</Link>
+                <Link href="/" className="hover:text-gray-300" onClick={closeMenu}>Home</Link>
               </li>
               <li>
-                <Link href="#about" className="hover:text-gray-300" title="Learn More About Us">About</Link>
+                <Link href="#about" className="hover:text-gray-300" onClick={closeMenu}>About</Link>
               </li>
               <li>
-                <Link href="#blog" className="hover:text-gray-300" title="Read Our Blog">Blog</Link>
+                <Link href="#blog" className="hover:text-gray-300" onClick={closeMenu}>Blog</Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-gray-300" title="Get in Touch with Us">Contact</Link>
+                <Link href="#contact" className="hover:text-gray-300" onClick={closeMenu}>Contact</Link>
               </li>
             </ul>
           </div>
